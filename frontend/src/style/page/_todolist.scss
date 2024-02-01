@@ -1,0 +1,140 @@
+.todolist {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+
+  .title {
+    font-size: 10rem;
+    padding: 10px;
+  }
+
+  .deconnexionContainer {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+
+    button {
+      background: none;
+      color: inherit;
+      border: none;
+      padding: 0;
+      font: inherit;
+      cursor: pointer;
+      outline: inherit;
+      font-size: 3rem;
+
+      &:hover {
+        cursor: pointer;
+        color: rgb(255, 0, 0);
+        text-decoration: underline;
+      }
+    }
+  }
+
+  .add {
+    border-top: solid 2px white;
+    border-bottom: solid 2px white;
+    padding: 10px;
+
+    .text {
+      font-size: 3rem;
+      margin-bottom: 10px;
+    }
+
+    input,
+    option,
+    select {
+      color: black;
+      font-size: 3rem;
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+  }
+
+  h2 {
+    font-size: 8rem;
+    margin-bottom: 15px;
+  }
+  .containerall {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+    margin-top: 30px;
+    padding: 50px;
+
+    input,
+    option,
+    select {
+      color: black;
+      font-size: 2rem;
+      padding: 5px;
+      margin-bottom: 10px;
+      margin-left: 10px;
+    }
+
+    .separator {
+      border-right: solid 2px white;
+    }
+
+    .tableContainer {
+      display: flex;
+      flex-direction: column;
+      .liste {
+        display: flex;
+        align-items: center;
+
+        .late {
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+          font-size: 2rem;
+          color: red;
+          font-weight: bold;
+        }
+
+        .ontime {
+          font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+            sans-serif;
+          font-size: 2rem;
+        }
+
+        li {
+          padding-left: 10px;
+          font-size: 3rem;
+          list-style-type: none;
+        }
+        .todo {
+          color: white;
+        }
+        .wip {
+          color: white;
+        }
+        .done {
+          text-decoration: line-through;
+          color: green;
+        }
+        .removeTask {
+          background: none;
+          color: inherit;
+          border: none;
+          padding: 0;
+          font: inherit;
+          cursor: pointer;
+          outline: inherit;
+          color: red;
+          font-size: 2rem;
+
+          margin-left: 15px;
+          padding: 3px;
+        }
+      }
+    }
+  }
+}
+
+// 1 : fetch API pour liste des status id/name
+// 2 dans le select, mapper cette liste
+// 3 on change, on envoie au back et ca maj (just modifier le handle)
+// 4 css custo list status

@@ -1,0 +1,59 @@
+.connexion {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 100vh;
+  width: 100vw;
+
+  .formulaire {
+    width: 30vw;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    legend {
+      font-size: 7rem;
+      padding: 20px;
+    }
+    .connexionForm {
+      form {
+        padding: 20px;
+        gap: 20px;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+        input {
+          padding: 5px;
+          color: black;
+
+          font-size: 3rem;
+        }
+
+        //   submit:hover {
+        //     cursor: pointer;
+        //   }
+      }
+    }
+    .inscriptionMessage {
+      display: flex;
+      align-items: center;
+      p {
+        font-size: 3rem;
+      }
+      button {
+        margin-top: 5px;
+        margin-left: 10px;
+        background: none;
+        color: inherit;
+        border: none;
+        padding: 0;
+        font: inherit;
+        cursor: pointer;
+        outline: inherit;
+        font-size: 2rem;
+      }
+    }
+  }
+}
