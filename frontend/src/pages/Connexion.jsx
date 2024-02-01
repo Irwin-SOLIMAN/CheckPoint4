@@ -59,7 +59,7 @@ function Connexion() {
         <div className="connexionForm">
           <form action="" onSubmit={handleSubmit}>
             <input
-              type="text"
+              type="email"
               name="email"
               onChange={(e) =>
                 setNewUser({ ...newUser, email: e.target.value })

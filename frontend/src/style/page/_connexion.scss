@@ -6,6 +6,12 @@
   height: 100vh;
   width: 100vw;
 
+  .message {
+    p {
+      font-size: 3rem;
+    }
+  }
+
   .formulaire {
     width: 30vw;
     display: flex;

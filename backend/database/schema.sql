@@ -11,10 +11,10 @@ CREATE TABLE user (
 INSERT INTO
     user (name, email, hashed_password)
 VALUES (
-        'a', 'a@a', '$argon2id$v=19$m=19456,t=2,p=1$NMamleRccbSad9JBa5rfDA$7Q/QeusXGFCzUp+9R0jWiTYqXq9r5k8UPlBf0KIEgd4'
+        'Irwin', 'irwin@gmail.com', '$argon2id$v=19$m=19456,t=2,p=1$lBtGynNPOZ703BKPgDaojw$RY2la7uA6n69nIUaLaeHZJwEfbYTS1TRWlM5V46W4FQ'
     ),
     (
-        'b', 'b@b', '$argon2id$v=19$m=19456,t=2,p=1$NMamleRccbSad9JBa5rfDA$7Q/QeusXGFCzUp+9R0jWiTYqXq9r5k8UPlBf0KIEgd4'
+        'Helene', 'Helene@gmail.com', '$argon2id$v=19$m=19456,t=2,p=1$NMamleRccbSad9JBa5rfDA$7Q/QeusXGFCzUp+9R0jWiTYqXq9r5k8UPlBf0KIEgd4'
     );
 
 CREATE TABLE status (

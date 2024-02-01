@@ -13,7 +13,7 @@ function InscriptionModal({ setInscriptionModal, inscriptionModal }) {
     username: "",
   });
 
-  const [setUser] = useOutletContext();
+  const { setUser } = useOutletContext();
 
   const navigate = useNavigate();
 
@@ -28,27 +28,30 @@ function InscriptionModal({ setInscriptionModal, inscriptionModal }) {
 
     if (!newUser.username || !newUser.email || !newUser.password) {
       setErrorMessage("Veuillez remplir tous les champs");
-    }
+    } else {
+      try {
+        // Envoi vers back pour création du user
+        await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/api/user`,
+          newUser
+        );
 
-    try {
-      // Envoi vers back pour création du user
-      await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/user`, newUser);
+        // Envoie vers back pour connexion du user
 
-      // Envoie vers back pour connexion du user
+        const response = await axios.post(
+          `${import.meta.env.VITE_BACKEND_URL}/api/login`,
+          { email: newUser.email, password: newUser.password }
+        );
 
-      const response = await axios.post(
-        `${import.meta.env.VITE_BACKEND_URL}/api/login`,
-        { email: newUser.email, password: newUser.password }
-      );
+        setUser(response.data.user);
+        localStorage.setItem("token", response.data.token);
 
-      setUser(response.data.user);
-      localStorage.setItem("token", response.data.token);
+        navigate("/todolist");
 
-      navigate("/todolist");
-
-      // on récupère et stock les infos de l'utilisateur + le token qu'on stock en local storage :
-    } catch (error) {
-      console.error(error);
+        // on récupère et stock les infos de l'utilisateur + le token qu'on stock en local storage :
+      } catch (error) {
+        console.error(error);
+      }
     }
   }
 
@@ -81,7 +84,7 @@ function InscriptionModal({ setInscriptionModal, inscriptionModal }) {
                 placeholder="Name"
               />
               <input
-                type="text"
+                type="email"
                 name="email"
                 onChange={(e) =>
                   setNewUser({ ...newUser, email: e.target.value })
